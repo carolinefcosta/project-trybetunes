@@ -9,6 +9,13 @@ class Search extends Component {
           <Header />
         </div>
         <form>
+
+          <label htmlFor="search-artist-input">
+            <input
+              id="search-artist-input"
+              data-testid="search-artist-input"
+            />
+          </label>
         </form>
       </>
     );

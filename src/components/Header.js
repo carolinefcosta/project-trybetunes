@@ -20,14 +20,12 @@ class Header extends Component {
 
   render() {
     const { user, isLoading } = this.state;
-    console.log(this.props);
+    if (isLoading) return <Loading />;
     return (
       <header
-        user="user"
-        value={ user }
         data-testid="header-component"
       >
-        { isLoading ? <Loading /> : user.name }
+        <p data-testid="header-user-name">{user.name}</p>
         <Link to="/search" data-testid="link-to-search">Search</Link>
         <Link to="/favorites" data-testid="link-to-favorites">Músicas Favoritas</Link>
         <Link to="/profile" data-testid="link-to-profile">Perfil</Link>

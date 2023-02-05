@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import Loading from '../components/Loading';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import AlbumStructure from '../components/AlbumStructure';
 
 class Search extends Component {
   state = {
-    artistName: '',
+    nameArtist: '',
     disabledButton: true,
+    isLoading: false,
+    album: [],
+    nameArtistSalve: '',
   };
 
   handleChange = ({ target }) => {
@@ -18,16 +25,38 @@ class Search extends Component {
 
   verifyButton = () => {
     const minLength = 2;
-    const { artistName } = this.state;
-    if (artistName.length >= minLength) {
+    const { nameArtist } = this.state;
+    if (nameArtist.length >= minLength) {
       this.setState({
         disabledButton: false,
       });
     }
   };
 
+  verifyClickButton = async () => {
+    const { nameArtist } = this.state;
+    this.setState({
+      nameArtist: '',
+      isLoading: true,
+    });
+    const resultSearch = await searchAlbumsAPI(nameArtist);
+    this.setState({
+      album: resultSearch,
+      isLoading: false,
+      nameArtist: '',
+      nameArtistSalve: nameArtist,
+    });
+  };
+
   render() {
-    const { artistName, disabledButton } = this.state;
+    const {
+      nameArtist,
+      disabledButton,
+      isLoading,
+      album,
+      nameArtistSalve,
+    } = this.state;
+    if (isLoading) return <Loading />;
     return (
       <>
         <div data-testid="page-search">
@@ -37,8 +66,8 @@ class Search extends Component {
 
           <label htmlFor="search-artist-input">
             <input
-              value={ artistName }
-              name="artistName"
+              value={ nameArtist }
+              name="nameArtist"
               type="text"
               id="search-artist-input"
               data-testid="search-artist-input"
@@ -49,11 +78,43 @@ class Search extends Component {
             type="button"
             data-testid="search-artist-button"
             disabled={ disabledButton }
+            onClick={ this.verifyClickButton }
           >
             Pesquisar
 
           </button>
         </form>
+        <section>
+          {
+            album.length === 0
+              ? <p>Nenhum álbum foi encontrado</p>
+              : (
+                <h2>
+                  {`Resultado de álbuns de: ${nameArtistSalve}`}
+                </h2>
+              )
+          }
+        </section>
+
+        <section>
+          {
+            album.map((albumIndivual, index) => (
+              <div
+                key={ index }
+              >
+                <AlbumStructure
+                  artistName={ albumIndivual.artistName }
+                  collectionName={ albumIndivual.collectionName }
+                  collectionPrice={ albumIndivual.collectionPrice }
+                />
+                <Link
+                  data-testid={ `link-to-album-${albumIndivual.collectionId}` }
+                  to={ `/album/${albumIndivual.collectionId}` }
+                />
+              </div>
+            ))
+          }
+        </section>
       </>
     );
   }

@@ -105,12 +105,13 @@ class Search extends Component {
                 <AlbumStructure
                   artistName={ albumIndivual.artistName }
                   collectionName={ albumIndivual.collectionName }
-                  collectionPrice={ albumIndivual.collectionPrice }
                 />
                 <Link
                   data-testid={ `link-to-album-${albumIndivual.collectionId}` }
                   to={ `/album/${albumIndivual.collectionId}` }
-                />
+                >
+                  Clique Aqui
+                </Link>
               </div>
             ))
           }

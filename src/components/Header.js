@@ -13,8 +13,8 @@ class Header extends Component {
   async componentDidMount() {
     const response = await getUser();
     this.setState({
-      isLoading: false,
       user: response,
+      isLoading: false,
     });
   }
 

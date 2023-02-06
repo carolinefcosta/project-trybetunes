@@ -6,13 +6,11 @@ class AlbumStructure extends Component {
     const {
       artistName,
       collectionName,
-      collectionPrice,
     } = this.props;
     return (
       <div>
         <h1>{artistName}</h1>
         <span>{collectionName}</span>
-        <span>{collectionPrice}</span>
       </div>
     );
   }
@@ -21,7 +19,6 @@ class AlbumStructure extends Component {
 AlbumStructure.propTypes = {
   artistName: PropTypes.string.isRequired,
   collectionName: PropTypes.string.isRequired,
-  collectionPrice: PropTypes.number.isRequired,
 };
 
 export default AlbumStructure;

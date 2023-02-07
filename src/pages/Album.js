@@ -39,19 +39,6 @@ class Album extends Component {
     });
   };
 
-  // verifyChecked = async (param, { target }) => {
-  //   const checked = target.type === 'checkbox' ? target.checked : target.value;
-  //   this.setState({ isLoading: true });
-  //   const selectMusicFavorite = addSong(param);
-  //   if (checked) {
-  //     this.setState((estadoAnterior) => ({
-  //       musicsSalve: [...estadoAnterior.musicsSalve, selectMusicFavorite],
-  //       isLoading: false,
-  //       favorites: true,
-  //     }));
-  //   }
-  // };
-
   render() {
     const {
       musicList,

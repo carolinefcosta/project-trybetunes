@@ -27,15 +27,16 @@ class Album extends Component {
     });
   }
 
-  verifyChecked = async (value) => {
+  verifyChecked = (value) => {
     this.setState({
       isLoading: true,
-    });
-    await addSong(value);
-    const myFavorites = await getFavoriteSongs();
-    this.setState({
-      isLoading: false,
-      musicFavorite: myFavorites,
+    }, async () => {
+      await addSong(value);
+      const myFavorites = await getFavoriteSongs();
+      this.setState({
+        isLoading: false,
+        musicFavorite: myFavorites,
+      });
     });
   };
 

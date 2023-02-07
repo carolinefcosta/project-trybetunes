@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
 import Loading from '../components/Loading';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class Album extends Component {
   state = {
@@ -38,6 +38,14 @@ class Album extends Component {
         musicFavorite: myFavorites,
       });
     });
+  };
+
+  remove = async (param) => {
+    const { musicFavorite } = this.state;
+    await removeSong(param);
+
+    const removeMusic = musicFavorite.filter((music) => music.trackId !== param.trackId);
+    return removeMusic;
   };
 
   render() {
@@ -78,6 +86,7 @@ class Album extends Component {
                             element.trackId === music.trackId
                           )) }
                           verifyChecked={ () => { this.verifyChecked(music); } }
+                          onClick={ this.remove }
                         />
                       </div>
                     ))

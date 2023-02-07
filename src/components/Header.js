@@ -23,6 +23,7 @@ class Header extends Component {
     if (isLoading) return <Loading />;
     return (
       <header
+        className="header"
         data-testid="header-component"
       >
         <p data-testid="header-user-name">{user.name}</p>

@@ -6,9 +6,11 @@ class AlbumStructure extends Component {
     const {
       artistName,
       collectionName,
+      artworkUrl100,
     } = this.props;
     return (
       <div>
+        <img src={ artworkUrl100 } alt={ `Álbum de: ${artistName}` } />
         <h1>{artistName}</h1>
         <span>{collectionName}</span>
       </div>
@@ -17,6 +19,7 @@ class AlbumStructure extends Component {
 }
 
 AlbumStructure.propTypes = {
+  artworkUrl100: PropTypes.elementType.isRequired,
   artistName: PropTypes.string.isRequired,
   collectionName: PropTypes.string.isRequired,
 };

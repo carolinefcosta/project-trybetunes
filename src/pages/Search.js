@@ -103,6 +103,7 @@ class Search extends Component {
                 key={ index }
               >
                 <AlbumStructure
+                  artworkUrl100={ albumIndivual.artworkUrl100 }
                   artistName={ albumIndivual.artistName }
                   collectionName={ albumIndivual.collectionName }
                 />

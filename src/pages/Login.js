@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 import '../styles/Login.css';
+// import logoInicial from '../img/musica-chorando.png';
+import logo from '../img/ouvindo-musica.png';
 
 class Login extends Component {
   state = {
@@ -48,28 +50,41 @@ class Login extends Component {
     const { name, disabledButton, isLoading } = this.state;
     if (isLoading) return <Loading />;
     return (
-      <form>
-        <div data-testid="page-login">
-          <label htmlFor="login-name-input">
-            <input
-              id="login-name-input"
-              type="text"
-              name="name"
-              data-testid="login-name-input"
-              value={ name }
-              onChange={ this.handleChange }
-            />
-          </label>
-          <button
-            type="button"
-            onClick={ this.verifyCreateUser }
-            disabled={ disabledButton }
-            data-testid="login-submit-button"
-          >
-            Entrar
-          </button>
-        </div>
-      </form>
+      <div className="body">
+        <form className="form">
+          <div data-testid="page-login">
+            <div className="trybe-logo">
+              <h1 className="h1">Trybe</h1>
+              <img
+                className="logo-music"
+                src={ logo }
+                alt="logo-music"
+              />
+              <h1 className="tunes h1">Tunes</h1>
+            </div>
+            <label htmlFor="login-name-input">
+              <input
+                className="login-name-input"
+                id="login-name-input"
+                type="text"
+                name="name"
+                data-testid="login-name-input"
+                value={ name }
+                onChange={ this.handleChange }
+              />
+            </label>
+            <button
+              className="login-submit-button"
+              type="button"
+              onClick={ this.verifyCreateUser }
+              disabled={ disabledButton }
+              data-testid="login-submit-button"
+            >
+              Entrar
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

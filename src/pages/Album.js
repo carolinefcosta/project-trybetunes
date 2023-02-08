@@ -28,9 +28,7 @@ class Album extends Component {
   }
 
   verifyChecked = (value) => {
-    this.setState({
-      isLoading: true,
-    }, async () => {
+    this.setState({ isLoading: true }, async () => {
       await addSong(value);
       const myFavorites = await getFavoriteSongs();
       this.setState({
@@ -86,7 +84,7 @@ class Album extends Component {
                             element.trackId === music.trackId
                           )) }
                           verifyChecked={ () => { this.verifyChecked(music); } }
-                          onClick={ this.remove }
+                          onClick={ this.remove() }
                         />
                       </div>
                     ))

@@ -1,3 +1,88 @@
-.header {
-  background-color: greenyellow;
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+* {
+  font-family: 'Indie Flower', cursive;
+}
+
+/* .body {
+  margin: 0;
+  background-color: pink;
+} */
+
+.form {
+  display: flexbox;
+  background-color: rgba(255, 255, 255, 0.938);
+  /* background-color: #e50072e8; */
+  text-align: center;
+  margin-top: 5%;
+  width: 60%;
+  margin-left: 20%;
+  border-radius: 40px;
+}
+
+.h1 {
+  color: palevioletred;
+  /* color: black; */
+  display: flexbox;
+  margin-top: 200px;
+  margin: 0;
+  padding: 5px;
+}
+
+.trybe-logo {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  font-size: 30px;
+
+}
+
+.logo-music {
+  display: flexbox;
+  margin: 0;
+  padding: 0;
+  margin: 120px 0 100px 0 ;
+  width: 120px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.tunes {
+  text-align: center;
+}
+
+.login-name-input {
+  /* border: none; */
+  padding: 12px 16px;
+  border-radius: 10px;
+  width: 250px;
+  height: 40px;
+  margin-bottom: 30px;
+  margin: 10px;
+}
+
+.login-submit-button {
+  text-align: center;
+  margin-top: 35px;
+  padding: 8px;
+  color: #FFFFFF;
+  background-color: rgb(218, 131, 164);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  height: 35px;
+  width: 80px;
+  margin-bottom: 30px;
+}
+
+.login-submit-button:disabled {
+  background-color: rgb(188, 188, 188);
+}
+
+.login-submit-button:hover {
+  cursor: pointer;
 }

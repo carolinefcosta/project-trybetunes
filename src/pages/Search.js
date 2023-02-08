@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import AlbumStructure from '../components/AlbumStructure';
+import '../styles/Search.css';
 
 class Search extends Component {
   state = {
@@ -62,10 +63,10 @@ class Search extends Component {
         <div data-testid="page-search">
           <Header />
         </div>
-        <form>
-
+        <form className="form-search">
           <label htmlFor="search-artist-input">
             <input
+              className="input-search"
               value={ nameArtist }
               name="nameArtist"
               type="text"
@@ -75,31 +76,31 @@ class Search extends Component {
             />
           </label>
           <button
+            className="button-search"
             type="button"
             data-testid="search-artist-button"
             disabled={ disabledButton }
             onClick={ this.verifyClickButton }
           >
             Pesquisar
-
           </button>
         </form>
-        <section>
+        <section className="result-search">
           {
             album.length === 0
-              ? <p>Nenhum álbum foi encontrado</p>
+              ? <p className="p">Nenhum álbum foi encontrado</p>
               : (
-                <h2>
+                <h2 className="h2">
                   {`Resultado de álbuns de: ${nameArtistSalve}`}
                 </h2>
               )
           }
         </section>
-
-        <section>
+        <section className="section-search">
           {
             album.map((albumIndivual, index) => (
               <div
+                className="album-search"
                 key={ index }
               >
                 <AlbumStructure
@@ -111,7 +112,10 @@ class Search extends Component {
                   data-testid={ `link-to-album-${albumIndivual.collectionId}` }
                   to={ `/album/${albumIndivual.collectionId}` }
                 >
-                  Clique Aqui
+                  <img
+                    src={ albumIndivual.artworkUrl100 }
+                    alt={ `Álbum de: ${albumIndivual.artistName}` }
+                  />
                 </Link>
               </div>
             ))

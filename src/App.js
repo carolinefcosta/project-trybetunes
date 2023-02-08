@@ -12,8 +12,7 @@ import './styles/App.css';
 class App extends React.Component {
   render() {
     return (
-      <>
-        <p>TrybeTunes</p>
+      <section>
         <Switch>
           <Route path="/album/:id" component={ Album } />
           <Route path="/profile/edit" component={ ProfileEdit } />
@@ -23,7 +22,7 @@ class App extends React.Component {
           <Route exact path="/" render={ (props) => <Login { ...props } /> } />
           <Route path="*" component={ NotFound } />
         </Switch>
-      </>
+      </section>
     );
   }
 }

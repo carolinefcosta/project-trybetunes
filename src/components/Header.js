@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
+import '../styles/Header.css';
+import logado from '../img/logado.png';
 
 class Header extends Component {
   state = {
@@ -26,10 +28,46 @@ class Header extends Component {
         className="header"
         data-testid="header-component"
       >
-        <p data-testid="header-user-name">{user.name}</p>
-        <Link to="/search" data-testid="link-to-search">Search</Link>
-        <Link to="/favorites" data-testid="link-to-favorites">Músicas Favoritas</Link>
-        <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
+        <div className="div-header">
+          <img
+            className="img-header"
+            src={ logado }
+            alt="imagem perfil logado"
+          />
+          <p data-testid="header-user-name">{user.name}</p>
+        </div>
+        <section className="section-header">
+          <div className="link-div-search">
+            <Link
+              className="link"
+              to="/search"
+              data-testid="link-to-search"
+            >
+              🔎 Procurar
+
+            </Link>
+          </div>
+          <div className="link-div-favorites">
+            <Link
+              className="link"
+              to="/favorites"
+              data-testid="link-to-favorites"
+            >
+              🎶 Favoritas
+
+            </Link>
+          </div>
+          <div className="link-div-profile">
+            <Link
+              className="link"
+              to="/profile"
+              data-testid="link-to-profile"
+            >
+              👤 Perfil
+
+            </Link>
+          </div>
+        </section>
       </header>
     );
   }

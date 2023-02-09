@@ -27,24 +27,24 @@ class Album extends Component {
     });
   }
 
-  verifyChecked = (value) => {
-    this.setState({ isLoading: true }, async () => {
-      await addSong(value);
-      const myFavorites = await getFavoriteSongs();
-      this.setState({
-        isLoading: false,
-        musicFavorite: myFavorites,
-      });
+  verifyChecked = async (value) => {
+    this.setState({ isLoading: true });
+    await addSong(value);
+    const myFavorites = await getFavoriteSongs();
+    await removeSong(myFavorites);
+    this.setState({
+      isLoading: false,
+      musicFavorite: myFavorites,
     });
   };
 
-  remove = async (param) => {
-    const { musicFavorite } = this.state;
-    await removeSong(param);
+  // remove = async (param) => {
+  //   const { musicFavorite } = this.state;
+  //   // if (!target.checked) { await removeSong(target.checked); }
 
-    const removeMusic = musicFavorite.filter((music) => music.trackId !== param.trackId);
-    return removeMusic;
-  };
+  //   const removeMusic = musicFavorite.filter((music) => music.trackId !== param.trackId);
+  //   return removeMusic;
+  // };
 
   render() {
     const {
@@ -80,11 +80,11 @@ class Album extends Component {
                           trackName={ music.trackName }
                           previewUrl={ music.previewUrl }
                           music={ music }
-                          checked={ musicFavorite.some((element) => (
+                          checked={ musicFavorite.find((element) => (
                             element.trackId === music.trackId
                           )) }
                           verifyChecked={ () => { this.verifyChecked(music); } }
-                          onClick={ this.remove() }
+                          // onClick={ () => { this.remove(); } }
                         />
                       </div>
                     ))

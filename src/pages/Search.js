@@ -66,6 +66,7 @@ class Search extends Component {
         <form className="form-search">
           <label htmlFor="search-artist-input">
             <input
+              placeholder="Pesquise pelo Álbum/ Artista"
               className="input-search"
               value={ nameArtist }
               name="nameArtist"
@@ -88,7 +89,11 @@ class Search extends Component {
         <section className="result-search">
           {
             album.length === 0
-              ? <p className="p">Nenhum álbum foi encontrado</p>
+              ? (
+                <p className="p">
+                  Nenhum álbum foi encontrado
+                </p>
+              )
               : (
                 <h2 className="h2">
                   {`Resultado de álbuns de: ${nameArtistSalve}`}
@@ -103,11 +108,6 @@ class Search extends Component {
                 className="album-search"
                 key={ index }
               >
-                <AlbumStructure
-                  artworkUrl100={ albumIndivual.artworkUrl100 }
-                  artistName={ albumIndivual.artistName }
-                  collectionName={ albumIndivual.collectionName }
-                />
                 <Link
                   data-testid={ `link-to-album-${albumIndivual.collectionId}` }
                   to={ `/album/${albumIndivual.collectionId}` }
@@ -117,6 +117,11 @@ class Search extends Component {
                     alt={ `Álbum de: ${albumIndivual.artistName}` }
                   />
                 </Link>
+                <AlbumStructure
+                  artworkUrl100={ albumIndivual.artworkUrl100 }
+                  artistName={ albumIndivual.artistName }
+                  collectionName={ albumIndivual.collectionName }
+                />
               </div>
             ))
           }

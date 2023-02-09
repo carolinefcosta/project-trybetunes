@@ -80,7 +80,8 @@ class Album extends Component {
                           trackName={ music.trackName }
                           previewUrl={ music.previewUrl }
                           music={ music }
-                          checked={ musicFavorite.find((element) => (
+                          musicFavorite={ musicFavorite }
+                          checked={ musicFavorite.some((element) => (
                             element.trackId === music.trackId
                           )) }
                           verifyChecked={ () => { this.verifyChecked(music); } }

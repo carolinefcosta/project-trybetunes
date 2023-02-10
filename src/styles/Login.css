@@ -6,12 +6,13 @@
 
 .body {
   margin: 0;
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 .form {
+  background-color: rgb(226, 83, 130);
   display: flexbox;
-  background-color: rgba(255, 255, 255, 0.938);
+  /* background-color: rgba(255, 255, 255, 0.938); */
   text-align: center;
   margin-top: 5%;
   width: 60%;
@@ -20,7 +21,7 @@
 }
 
 .h1 {
-  color: palevioletred;
+  /* color: palevioletred; */
   display: flexbox;
   margin-top: 200px;
   margin: 0;

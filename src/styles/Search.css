@@ -18,10 +18,10 @@
   height: 40px;
   margin-bottom: 30px;
   margin: 10px;
+  margin-top: 0;
 }
 
 .button-search {
-  margin: 12px;
   padding: 8px;
   color: #FFFFFF;
   background-color: rgb(218, 131, 164);
@@ -35,11 +35,12 @@
 
 .p {
   text-align: center;
+  font-size: 20px;
 }
 
 .h2 {
   text-align: center;
-  background-color: white;
+  background-color: rgb(218, 131, 164);
   padding: 50px;
   width: 350px;
   margin-left: 35%;
@@ -56,7 +57,7 @@
 
 .album-search {
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.863);
+  background-color: rgba(218, 131, 164, 0.836);
   width: 290px;
   margin: 0px 30px 30px 0;
   margin-left: 6%;

@@ -2,13 +2,15 @@
   display: flex;
   justify-content:space-between;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
+  background-color: rgb(226, 83, 130);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .div-header {
   display: flex;
-  background-color: #FFFFFF;
+  background-color: rgb(218, 131, 164);
+  /* background-color: #FFFFFF; */
   width: 190px;
   height: 31.65px;
   align-items: center;

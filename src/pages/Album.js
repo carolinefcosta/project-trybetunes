@@ -5,6 +5,7 @@ import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
 import Loading from '../components/Loading';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import '../styles/Album.css';
 
 class Album extends Component {
   state = {
@@ -63,18 +64,22 @@ class Album extends Component {
             ? <Loading />
             : (
               <>
-                <section>
+                <section className="section-artist-album">
                   <div data-testid="artist-name">
+                    🎤
+                    {' '}
                     {artistName}
+                    {' '}
+                    🎤
                   </div>
                   <div data-testid="album-name">
                     {nameAlbum}
                   </div>
                 </section>
-                <section>
+                <section className="section-album">
                   {
                     musicList.map((music, index) => (
-                      <div key={ index }>
+                      <div key={ index } className="music">
                         <MusicCard
                           trackId={ music.trackId }
                           trackName={ music.trackName }

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 import '../styles/Login.css';
-// import logoInicial from '../img/musica-chorando.png';
 import logo from '../img/ouvindo-musica.png';
 
 class Login extends Component {

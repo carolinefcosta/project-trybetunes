@@ -1,7 +1,17 @@
 .div-loading {
+  margin-top: 200px;
+  align-items: center;
+  background-color: rgba(226, 83, 131, 0.87);
+  width: 350px;
+  border-radius: 20px;
+  display: flex;
   text-align: center;
+  margin-left: 35%;
 }
 
-.h2-loading {
-
+.logo-carregando  {
+  padding: 5px;
+  border-radius: 20px;
+  width: 120px;
+  height: 120px;
 }

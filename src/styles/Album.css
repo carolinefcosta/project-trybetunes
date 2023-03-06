@@ -1,0 +1,31 @@
+.section-artist-album {
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+  background-color: rgb(218, 131, 164);
+  padding: 50px;
+  width: 350px;
+  margin-left: 35%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.section-album {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.music {
+  border-radius: 50px;
+  align-items: center;
+  background-color: rgba(218, 131, 164, 0.836);
+  width: 360px;
+  margin: 0px 30px 30px 0;
+  margin-left: 2%;
+  height: 130px;
+  border: 1px solid #E1E5EB;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}

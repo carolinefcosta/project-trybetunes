@@ -90,7 +90,7 @@ class Album extends Component {
                             element.trackId === music.trackId
                           )) }
                           verifyChecked={ () => { this.verifyChecked(music); } }
-                          // onClick={ () => { this.remove(); } }
+                          // onClick={ () => { this.remove(music); } }
                         />
                       </div>
                     ))

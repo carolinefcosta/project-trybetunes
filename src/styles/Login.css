@@ -6,16 +6,12 @@
 
 .body {
   margin: 0;
-  /* background-color: pink; */
 }
 
 .form {
-  /* background-image: url('../img/img1.jpg');
+  background-image: url('../img/img2.jpg');
   background-repeat: no-repeat;
-  background-size: 100%; */
-  background-color: rgba(226, 83, 131, 0.87);
-  display: flexbox;
-  /* background-color: rgba(255, 255, 255, 0.938); */
+  background-size: cover;
   text-align: center;
   margin-top: 5%;
   width: 60%;
@@ -25,9 +21,7 @@
 }
 
 .h1 {
-  /* color: palevioletred; */
-  display: flexbox;
-  margin-top: 200px;
+  display: flex;
   margin: 0;
   padding: 5px;
 }
@@ -45,10 +39,9 @@
 }
 
 .logo-music {
-  display: flexbox;
   margin: 0;
   padding: 0;
-  margin: 120px 0 100px 0 ;
+  margin: 80px 0 120px 0 ;
   width: 120px;
   height: 100px;
   border-radius: 50px;

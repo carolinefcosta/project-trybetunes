@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/MucicCard.css';
 
 class MusicCard extends Component {
   render() {
@@ -13,16 +14,21 @@ class MusicCard extends Component {
     } = this.props;
 
     return (
-      <div>
-        <h2>
+      <div className="div-pai-musicCard">
+        <h2 className="h2-music">
           {trackName}
         </h2>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
+        <audio
+          data-testid="audio-component"
+          src={ previewUrl }
+          controls
+          className="audio"
+        >
+          <track kind="captions" className="track" />
           O seu navegador não suporta o elemento
           {' '}
           {' '}
-          <code>audio</code>
+          <code className="code">audio</code>
           .
         </audio>
         <label htmlFor="inputCheckbox">

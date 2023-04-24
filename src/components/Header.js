@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
 import '../styles/Header.css';
-import logado from '../img/logado.png';
+import logado from '../img/ouvindo-musica.png';
 
 class Header extends Component {
   state = {
@@ -53,7 +52,7 @@ class Header extends Component {
               to="/favorites"
               data-testid="link-to-favorites"
             >
-              🎶 Favoritas
+              ❤️ Favoritas
 
             </Link>
           </div>

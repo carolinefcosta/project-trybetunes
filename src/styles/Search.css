@@ -1,12 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
-* {
-  font-family: 'Indie Flower', cursive;
-}
-
 .form-search {
   display: flex;
-  margin-top: 110px;
+  margin-top: 30px;
   justify-content: center;
 }
 
@@ -16,9 +10,7 @@
   border-radius: 10px;
   width: 400px;
   height: 40px;
-  margin-bottom: 30px;
-  margin: 10px;
-  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .button-search {
@@ -38,14 +30,19 @@
   font-size: 20px;
 }
 
+.result-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .h2 {
+  background-image: linear-gradient( 58.2deg,  rgba(40,91,212,0.73) -3%, rgba(171,53,163,0.45) 49.3%, rgba(255,204,112,0.37) 97.7% );
   text-align: center;
-  background-color: rgb(218, 131, 164);
-  padding: 50px;
+  padding: 30px;
   width: 350px;
-  margin-left: 35%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 10px;
 }
 
@@ -57,12 +54,17 @@
 
 .album-search {
   align-items: center;
-  background-color: rgba(218, 131, 164, 0.836);
+  background-image: linear-gradient( 58.2deg,  rgba(40,91,212,0.73) -3%, rgba(171,53,163,0.45) 49.3%, rgba(255,204,112,0.37) 97.7% );
   width: 290px;
   margin: 0px 30px 30px 0;
   margin-left: 6%;
   height: 250px;
   border: 1px solid #E1E5EB;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
   border-radius: 6px;
+}
+
+.album-search:hover {
+  -webkit-transform: scale(1.5);
+  transform: scale(1.1);
 }

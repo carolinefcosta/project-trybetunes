@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
 import '../styles/Login.css';
-import logo from '../img/ouvindo-musica.png';
+import logo from '../img/music.gif';
 
 class Login extends Component {
   state = {
@@ -51,16 +51,16 @@ class Login extends Component {
     return (
       <div className="body">
         <form className="form">
-          <div data-testid="page-login">
-            <div className="trybe-logo">
-              <h1 className="h1">Trybe</h1>
-              <img
-                className="logo-music"
-                src={ logo }
-                alt="logo-music"
-              />
-              <h1 className="tunes h1">Tunes</h1>
-            </div>
+          <div data-testid="page-login" className="trybe-logo">
+            <h1 className="h1">Trybe</h1>
+            <img
+              className="logo-music"
+              src={ logo }
+              alt="logo-music"
+            />
+            <h1 className="h1">Tunes</h1>
+          </div>
+          <div className="input-button">
             <label htmlFor="login-name-input">
               <input
                 className="login-name-input"

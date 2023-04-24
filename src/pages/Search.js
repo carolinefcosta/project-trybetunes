@@ -101,7 +101,7 @@ class Search extends Component {
                       )
                       : (
                         <h2 className="h2">
-                          {`Resultado de álbuns de: 🎤 ${nameArtistSalve} 🎤`}
+                          {`Resultado de álbuns de: ${nameArtistSalve}`}
                         </h2>
                       )
                   }

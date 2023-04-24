@@ -10,6 +10,7 @@ import '../styles/Album.css';
 class Album extends Component {
   state = {
     artistName: '',
+    imgArtist: '',
     nameAlbum: '',
     musicList: [],
     isLoading: false,
@@ -23,6 +24,7 @@ class Album extends Component {
     this.setState({
       musicList: musics.filter((music, index) => index !== 0),
       artistName: musics[0].artistName,
+      imgArtist: musics[0].artworkUrl100,
       nameAlbum: musics[0].collectionName,
       musicFavorite: favoriteSalve,
     });
@@ -51,6 +53,7 @@ class Album extends Component {
     const {
       musicList,
       artistName,
+      imgArtist,
       nameAlbum,
       isLoading,
       musicFavorite,
@@ -63,16 +66,17 @@ class Album extends Component {
           isLoading
             ? <Loading />
             : (
-              <>
+              <div className="div-pai">
                 <section className="section-artist-album">
-                  <div data-testid="artist-name">
-                    🎤
-                    {' '}
+                  <img
+                    src={ imgArtist }
+                    alt={ `Álbum de: ${artistName}` }
+                    className="img-album"
+                  />
+                  <div data-testid="artist-name" className="album-name">
                     {artistName}
-                    {' '}
-                    🎤
                   </div>
-                  <div data-testid="album-name">
+                  <div data-testid="album-name" className="album-name">
                     {nameAlbum}
                   </div>
                 </section>
@@ -96,7 +100,7 @@ class Album extends Component {
                     ))
                   }
                 </section>
-              </>
+              </div>
             )
         }
 

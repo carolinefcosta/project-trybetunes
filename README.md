@@ -29,12 +29,6 @@ Nesse projeto, fui capaz de:
 - Utilizar o Switch do React Router
 - Criar links de navegação na aplicação com o componente Link;
 
-![image](https://user-images.githubusercontent.com/115182342/223114583-f0bdf27f-9011-4bb8-b236-8999a2806f9b.png)
-
-![image](https://user-images.githubusercontent.com/115182342/223114756-e365d759-94eb-44f0-8583-1040860d7c1c.png)
-
-![image](https://user-images.githubusercontent.com/115182342/223114879-9d181eee-5935-4e85-b719-89909a9033fa.png)
-
-![image](https://user-images.githubusercontent.com/115182342/223114990-f77e62e4-b117-4f5a-a0f6-a5ef74b50273.png)
-
-![image](https://user-images.githubusercontent.com/115182342/223115055-bc3278ff-7548-464d-a2e6-353045fa9fd6.png)
+<p align="center">
+  <img width="600px" heigth="600px" src="src/img/trybetunes.gif" />
+</p>

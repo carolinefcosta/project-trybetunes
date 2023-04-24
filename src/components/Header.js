@@ -38,7 +38,7 @@ class Header extends Component {
         <section className="section-header">
           <div className="link-div-search">
             <Link
-              className="link"
+              className="link procurar"
               to="/search"
               data-testid="link-to-search"
             >
@@ -48,7 +48,7 @@ class Header extends Component {
           </div>
           <div className="link-div-favorites">
             <Link
-              className="link"
+              className="link favoritar"
               to="/favorites"
               data-testid="link-to-favorites"
             >
@@ -58,7 +58,7 @@ class Header extends Component {
           </div>
           <div className="link-div-profile">
             <Link
-              className="link"
+              className="link perfil"
               to="/profile"
               data-testid="link-to-profile"
             >

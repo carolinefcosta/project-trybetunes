@@ -24,11 +24,11 @@ class MusicCard extends Component {
           controls
           className="audio"
         >
-          <track kind="captions" className="track" />
+          <track kind="captions" />
           O seu navegador não suporta o elemento
           {' '}
           {' '}
-          <code className="code">audio</code>
+          <code>audio</code>
           .
         </audio>
         <label htmlFor="inputCheckbox">
@@ -40,7 +40,6 @@ class MusicCard extends Component {
             onChange={ verifyChecked }
             checked={ checked }
           />
-          {/* Favorita */}
         </label>
       </div>
     );
